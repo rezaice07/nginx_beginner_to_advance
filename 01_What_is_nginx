@@ -1,1 +1,15 @@
-TOD
+
+How to install the nginx on linux (Ubuntu 22.04)
+----------------------------------------------------
+
+#Let's use the command to be used for installing nginx
+
+#Before installing, we will get update the apt
+sudo apt-get update -y
+
+#nginx installation command...
+sudo apt-get install nginx -y
+
+
+
+
