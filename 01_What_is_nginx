@@ -13,6 +13,23 @@ sudo apt-get install nginx -y
 #Check the status of nginx service is or not...Let's check
 sudo systemctl status nginx
 
+#Explore the nginx directories
+
+cd /etc/nginx
+
+ls -las
+
+#If you want to restart the nginx service...
+sudo systemctl restart nginx
+
+#Or you can use the folloing command to stop and start the nginx
+sudo systemctl stop nginx
+sudo systemctl start nginx
+sudo systemctl status nginx
+
+
+
+
 
 
 
