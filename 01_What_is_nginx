@@ -10,6 +10,9 @@ sudo apt-get update -y
 #nginx installation command...
 sudo apt-get install nginx -y
 
+#Check the status of nginx service is or not...Let's check
+sudo systemctl status nginx
+
 
 
 
