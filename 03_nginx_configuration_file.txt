@@ -1,3 +1,16 @@
 
 nginx configuration file | how to configure nginx using configuration file | configure nginx
 -------------------------------------------------------------------------------------------------
+
+#first we need to check the nginx directory
+
+cd /etc/nginx
+ls -las
+
+#https://www.youtube.com/watch?v=wMit8pLtTLk&list=PLXZNtFtjYrnlamhIiiFk4FaJzaHoe4g_5&index=3&ab_channel=DigitalDevops
+
+
+
+
+
+
