@@ -1,4 +1,7 @@
 
+
+
+
 nginx configuration file | how to configure nginx using configuration file | configure nginx
 -------------------------------------------------------------------------------------------------
 
@@ -7,10 +10,157 @@ nginx configuration file | how to configure nginx using configuration file | con
 cd /etc/nginx
 ls -las
 
+#Let's go to the nginx.config file
+
+cd /etc/nginx
+sudo cat nginx.conf
+
+#Now let's see the configurations on config file
+
+user www-data;
+worker_processes auto;
+pid /run/nginx.pid;
+include /etc/nginx/modules-enabled/*.conf;
+
+events {
+        worker_connections 768;
+        # multi_accept on;
+}
+
+http {
+
+        ##
+        # Basic Settings
+        ##
+
+        sendfile on;
+        tcp_nopush on;
+        types_hash_max_size 2048;
+        # server_tokens off;
+
+        # server_names_hash_bucket_size 64;
+        # server_name_in_redirect off;
+
+        include /etc/nginx/mime.types;
+        default_type application/octet-stream;
+
+        ##
+        # SSL Settings
+        ##
+
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3; # Dropping SSLv3, ref: POOD                               LE
+        ssl_prefer_server_ciphers on;
+
+        ##
+        # Logging Settings
+        ##
+
+        access_log /var/log/nginx/access.log;
+        error_log /var/log/nginx/error.log;
+
+        ##
+        # Gzip Settings
+        ##
+
+        gzip on;
+
+        # gzip_vary on;
+        # gzip_proxied any;
+        # gzip_comp_level 6;
+        # gzip_buffers 16 8k;
+        # gzip_http_version 1.1;
+        # gzip_types text/plain text/css application/json application/javascript                                text/xml application/xml application/xml+rss text/javascript;
+
+        ##
+        # Virtual Host Configs
+        ##
+
+        include /etc/nginx/conf.d/*.conf;
+        include /etc/nginx/sites-enabled/*;
+}
+
+
+#mail {
+#       # See sample authentication script at:
+#       # http://wiki.nginx.org/ImapAuthenticateWithApachePhpScript
+#
+#       # auth_http localhost/auth.php;
+#       # pop3_capabilities "TOP" "USER";
+#       # imap_capabilities "IMAP4rev1" "UIDPLUS";
+#
+#       server {
+#               listen     localhost:110;
+#               protocol   pop3;
+#               proxy      on;
+#       }
+#
+#       server {
+#               listen     localhost:143;
+#               protocol   imap;
+#               proxy      on;
+#       }
+#}
+
+
+#Let's see the section "Virtual Host Configs",where we have two settings
+
+include /etc/nginx/conf.d/*.conf;
+include /etc/nginx/sites-enabled/*;
+
+
+
+
+#Let's explore the site-enabled and its settings
+
+cd /etc/nginx/sites-enabled
+
+sudo vm default
+
+#here we can see all about default configurations for nginx
+
+
+	# Default server configuration
+	#
+	server {
+		listen 80 default_server;
+		listen [::]:80 default_server;
+
+
+
+	# include snippets/snakeoil.conf;
+
+	root /var/www/html;
+
+	# Add index.php to the list if you are using PHP
+	index index.html index.htm index.nginx-debian.html;
+
+	server_name _;
+
+	location / {
+			# First attempt to serve request as file, then
+			# as directory, then fall back to displaying a 404.
+			try_files $uri $uri/ =404
+
+
+#let's move to the directory "/var/www/html"
+
+cd /var/www/html
+
+--results
+index.nginx-debian.html
+
+#now check the ip address
+
+ip a
+
+#here, my ip address is 192.168.163.128
+
+
+
+
+
+
+References:
 #https://www.youtube.com/watch?v=wMit8pLtTLk&list=PLXZNtFtjYrnlamhIiiFk4FaJzaHoe4g_5&index=3&ab_channel=DigitalDevops
-
-
-
-
 
 
