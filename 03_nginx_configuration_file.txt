@@ -1,7 +1,3 @@
-
-
-
-
 nginx configuration file | how to configure nginx using configuration file | configure nginx
 -------------------------------------------------------------------------------------------------
 
