@@ -152,11 +152,64 @@ ip a
 #here, my ip address is 192.168.163.128
 
 
+#Let's create a file "nginxconfig"
+sudo mkdir /webhosting/configuration
+
+sudo touch nginxconfig
+
+#let's copy all the contents of "default" file from the directory "/etc/nginx/sites-enabled" 
+to "nginxconfig" file in the directory of "/webhosting/configuration"
+
+sudo vim /etc/nginx/sites-enabled/default
+
+--copy contents paste into the "nginxconfig" file
+
+#Now change the path of 
+"include /etc/nginx/sites-enabled/*;" to "include /webhosting/configuration/*;" in the file of "/etc/nginx/nginx.conf"
+
+#Remove default configuration on "default" file from "/etc/nginx/sites-enabled"
+cd /etc/nginx/sites-enabled
+sudo rm default;
+
+#Remove default configuration on "default" file from "/etc/nginx/sites-available"
+cd /etc/nginx/sites-available
+sudo rm default;
+
+#Now we'll link the configuration file "nginxconfig" with "sites-available" directory
+sudo ln -s /webhosting/configuration/nginxconfig /etc/nginx/sites-available
+
+#***note: this link or ln command allows to sync while changing any on "/webhosting/configuration/nginxconfig" file 
+
+#Now check files on sites-available directory
+reja@ubuntu2204:/etc/nginx/sites-available$ ls
+nginxconfig
+
+#check and verify the nginx server configuration is ok on not.
+
+sudo nginx -t
+
+--result:
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
 
 
+#Now restart the nginx service
 
+sudo systemctl restart nginx;
+sudo systemctl status nginx;
+
+#now go to the root folder 
+cd /var/www/html
+
+ls
+--result
+index.nginx-debian.html
+
+#Now change something in the "index.nginx-debian.html" file and see its response on your browser end.
+
+Enjoy.....
 
 References:
-#https://www.youtube.com/watch?v=wMit8pLtTLk&list=PLXZNtFtjYrnlamhIiiFk4FaJzaHoe4g_5&index=3&ab_channel=DigitalDevops
+https://www.youtube.com/watch?v=wMit8pLtTLk&list=PLXZNtFtjYrnlamhIiiFk4FaJzaHoe4g_5&index=3&ab_channel=DigitalDevops
 
 
