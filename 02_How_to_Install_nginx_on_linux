@@ -1,1 +1,28 @@
-TODO
+
+How to install the nginx on linux (Ubuntu 22.04)
+----------------------------------------------------
+
+#Let's use the command to be used for installing nginx
+
+#Before installing, we will get update the apt
+sudo apt-get update -y
+
+#nginx installation command...
+sudo apt-get install nginx -y
+
+#Check the status of nginx service is or not...Let's check
+sudo systemctl status nginx
+
+#Explore the nginx directories
+
+cd /etc/nginx
+
+ls -las
+
+#If you want to restart the nginx service...
+sudo systemctl restart nginx
+
+#Or you can use the folloing command to stop and start the nginx
+sudo systemctl stop nginx
+sudo systemctl start nginx
+sudo systemctl status nginx
