@@ -1,0 +1,5 @@
+How to install and deploy a expressjs on nginx service in ubuntu
+-----------------------------------------------------------------------
+
+#References:
+https://www.codewithharry.com/blogpost/deploy-nodejs-app-on-ubuntu/
