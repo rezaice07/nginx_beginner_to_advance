@@ -23,14 +23,14 @@ echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.co
 	NODE_MAJOR=20
 	NODE_MAJOR=21
 	
-NOte I am using NODE_MAJOR=20
+Note I am using NODE_MAJOR=20
 
-#Run Update and Install
+#Run to Update and Install
 sudo apt-get update
 sudo apt-get install nodejs -y
 
 #Uninstall nodejs Ubuntu & Debian packages
---To completely remove Node.js installed from the deb.nodesource.com package methods above:
+--To completely remove Node.js use the following steps:
 --use sudo on Ubuntu or run this as root on debian
 
 apt-get purge nodejs &&\
@@ -97,6 +97,5 @@ But  192.168.56.101:3001 also alive.
 Enjoy....
 
 
-Ref: https://www.youtube.com/watch?v=dx-ckNGsebA&list=PLXZNtFtjYrnlamhIiiFk4FaJzaHoe4g_5&index=4&ab_channel=DigitalDevops
-
-
+Ref: 
+https://www.youtube.com/watch?v=dx-ckNGsebA&list=PLXZNtFtjYrnlamhIiiFk4FaJzaHoe4g_5&index=4&ab_channel=DigitalDevops
