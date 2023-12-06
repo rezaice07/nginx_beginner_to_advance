@@ -1,0 +1,39 @@
+
+
+How To Remove Nginx In Linux | Uninstall Nginx
+----------------------------------------------
+
+#Update apt first
+
+sudo apt-get update
+
+#let's execute the remove command...
+
+sudo apt-get remove nginx
+
+#Let's purge it's related 
+
+sudo apt-get purge nginx
+
+#Remove unused files
+
+sudo apt-get autoremove
+
+#nginx-common delete
+
+sudo apt-get remove nginx nginx-common
+
+#and purge for comman
+
+sudo apt-get purge nginx nginx-common
+
+#autoremove
+sudo apt-get autoremove
+
+
+#let's delete nginx directory if it is exist..
+rm -rf /etc/nginx
+
+Coool and Enjoy.....
+
+
