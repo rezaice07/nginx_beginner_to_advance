@@ -1,0 +1,26 @@
+
+Setup Http Authentication in Nginx | Basic Authentication
+--------------------------------------------------------------
+
+#First we need to update the apt
+sudo apt-get update -y
+
+#Now we'll install the apache2-utils 
+#Questing is here why to we need to install this utils? this is because of generating the auth token
+
+sudo apt-get install apache2-utils
+
+#Let's generate the Hidden Password
+sudo htpasswd -c /etc/nginx/.htpasswd nginx
+
+#Check password is created or not...
+cat /etc/nginx/.htpasswd
+
+
+#Let's change the configuration in nginx default file....
+[Location:/etc/nginx/sites-enabled/default ]
+ 
+auth_basic "Private Property"; 
+auth_basic_user_file /etc/nginx/.htpasswd;
+
+sudo systemctl restart nginx
