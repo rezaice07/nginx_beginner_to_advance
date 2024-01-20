@@ -1,0 +1,27 @@
+#install desired runtime i.e trying to download runtime-6
+sudo apt-get install aspnetcore-runtime-6.0
+
+#Check dotnet info
+dotnet -info
+
+#run your project on dotnet (got to the working directory and use the following command...)
+dotnet Your_Project_Name.dll
+
+#Let's update appsettings.json file like below...
+
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*",
+  "Kestrel": {
+	"Endpoints": {
+		"Http": {
+			"Url": "http://*:8801"
+		}
+	}
+  }
+}
