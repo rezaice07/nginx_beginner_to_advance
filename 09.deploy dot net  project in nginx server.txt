@@ -1,3 +1,7 @@
+
+Deploy dot net project in nginx server
+----------------------------------------------------------------------------------------
+
 #install desired runtime i.e trying to download runtime-6
 sudo apt-get install aspnetcore-runtime-6.0
 
